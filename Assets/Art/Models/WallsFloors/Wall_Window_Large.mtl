@@ -1,0 +1,11 @@
+# This file was created with Minddesk Qubicle 3.0
+# Get Qubicle at www.getqubicle.com
+
+newmtl Wall_Window_Large_Material
+Ka 0.0 0.0 0.0
+Kd 1.0 1.0 1.0
+Ks 0.0 0.0 0.0
+d 1.0
+illum 1
+map_Kd materials\Wall_Window_Large.png
+
