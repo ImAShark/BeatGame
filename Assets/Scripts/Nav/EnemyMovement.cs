@@ -7,21 +7,44 @@ public class EnemyMovement : MonoBehaviour
 {
     private NavMeshAgent agent;
     private GameObject Player;
+    private Vector3 target;
+   [SerializeField] private bool isAtTarget = true, heardSound;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         Player = GameObject.Find("Player");
+        Listen();
     }
 
     void Update()
-    {
-        agent.SetDestination(Player.transform.position);
+    {        
+        GoToSound();
     }
 
-    private void CreatePath()
+    private void GoToSound()
     {
-        NavMeshPath path = new NavMeshPath();
-        agent.CalculatePath(Player.transform.position,path);
+        if (agent.pathStatus == NavMeshPathStatus.PathComplete)
+        {
+            isAtTarget = true;
+            heardSound = false;
+
+        }
+        if (!isAtTarget)
+        {
+            agent.SetDestination(target);
+        }        
     }
+
+    private void Listen()
+    {
+        if (!heardSound)
+        {
+            target = Player.transform.position;
+            heardSound = true;
+            isAtTarget = false;
+            agent.SetDestination(target);
+        }
+    }
+
 }
