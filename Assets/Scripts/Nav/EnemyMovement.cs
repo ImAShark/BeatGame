@@ -36,7 +36,7 @@ public class EnemyMovement : MonoBehaviour
         }        
     }
 
-    private void Listen()
+    public void Listen()
     {
         if (!heardSound)
         {
