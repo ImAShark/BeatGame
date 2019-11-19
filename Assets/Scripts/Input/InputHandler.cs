@@ -5,7 +5,7 @@ public class InputHandler : MonoBehaviour
 {
     public enum InputTypes { Controller, Keyboard };
     public enum Directions { North, NorthEast, East, SouthEast, South, SouthWest, West, NorthWest };
-    public enum OneShots { Jump, Shoot, Interact };
+    public enum OneShots { Jump, Attack, Interact };
 
     public event Action<Directions> Move;
     public event Action<AimData> Aim;
@@ -18,10 +18,16 @@ public class InputHandler : MonoBehaviour
 
     void Start()
     {
-        KeyboardInput kIN = GetComponent<KeyboardInput>();
-        kIN.OnMovement += SendMove;
-        kIN.OnAim += SendAim;
-        kIN.OnOneShot += FilterOneShots;
+        /// Uncomment when working on the ControllerInput class
+        //BaseInput input;
+        //if ( == InputTypes.Keyboard) input = GetComponent<KeyboardInput>();
+        //else input = GetComponent<ControllerInput>()
+
+        BaseInput input = GetComponent<KeyboardInput>();
+
+        input.OnMovement += SendMove;
+        input.OnAim += SendAim;
+        input.OnOneShot += FilterOneShots;
 
     }
 
@@ -32,7 +38,7 @@ public class InputHandler : MonoBehaviour
             case OneShots.Jump:
                 SendJump();
                 break;
-            case OneShots.Shoot:
+            case OneShots.Attack:
                 SendShoot();
                 break;
             case OneShots.Interact:
@@ -48,7 +54,7 @@ public class InputHandler : MonoBehaviour
             Move(direction);
         }
         catch {
-            Debug.LogError("No destination assigned to event: Move");
+            Debug.Log("No destination assigned to event: Move");
         }
     }
 
@@ -58,7 +64,7 @@ public class InputHandler : MonoBehaviour
             Aim(data);
         }
         catch {
-            Debug.LogError("No destination assigned to event: Aim");
+            Debug.Log("No destination assigned to event: Aim");
         }
     }
 
@@ -68,7 +74,7 @@ public class InputHandler : MonoBehaviour
             Jump();
         }
         catch {
-            Debug.LogError("No destination assigned to event: Jump");
+            Debug.Log("No destination assigned to event: Jump");
         }
     }
 
@@ -78,7 +84,7 @@ public class InputHandler : MonoBehaviour
             Shoot();
         }
         catch {
-            Debug.LogError("No destination assigned to event: Shoot");
+            Debug.Log("No destination assigned to event: Shoot");
         }
     }
 
@@ -88,7 +94,7 @@ public class InputHandler : MonoBehaviour
             Interact();
         }
         catch {
-            Debug.LogError("No destination assigned to event: Interact");
+            Debug.Log("No destination assigned to event: Interact");
         }
     }
 
