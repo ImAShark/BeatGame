@@ -1,4 +1,5 @@
 
+
 # Game Prototype
 //Let goed bij het maken, schrijven en bijhouden van dit document op de **[prestatie-indicatoren](https://drive.google.com/drive/folders/1y8l0Zr4E8b6gYJui_pSzQaoWr-gEr6JN?usp=sharing)**. Deze toon je aan
 //in dit document.*
@@ -7,7 +8,6 @@ For this assignment we have created a prototype of a game. In this prototype we 
 - User input
 - Player movement
 - Enemy pathfinding
-- Player& enemy attacks
 
 ## Features
 //Wanneer je een specifiek onderdeel wilt uitlichten kun je dat in deze sectie benoemen.
@@ -28,8 +28,9 @@ For this assignment we have created a prototype of a game. In this prototype we 
 ## Schedule
 | | Monday | Tuesday | Wednesday | Thursday | Friday |
 | --- | --- | --- | --- | --- | --- |
-|Week 46 - 2019| Documentation, EnemyMovement.cs| EnemyMovement.cs, Model sizes | InputHandler.cs , KeyboardInput.cs, Enemy pathfinding | InputHandler.cs, KeyboardInput.cs EnemyAttack.cs | PlayerMovement.cs, Enemy pathfinding |
-|Week 47 - 2019 | PlayerInput.cs, PlayerMovement.cs, EnemyAttack.cs | PlayerMovement.cs, PlayerAttack.cs, EnemyAttack.cs | PlayerAttack.cs, PlayerDeath.cs, EnemyDeath.cs | Optimising scripts, adding extra comments | Finalising and exporting project |
+|Week 46 - 2019| Documentation, EnemyMovement.cs| EnemyMovement.cs, Model sizes | InputHandler.cs , KeyboardInput.cs, Enemy pathfinding | InputHandler.cs, KeyboardInput.cs | PlayerMovement.cs, Enemy pathfinding |
+|Week 47 - 2019 | PlayerInput.cs, PlayerMovement.cs | PlayerMovement.cs, InputHandler.cs, Enemy pathfinding | PlayerDeath.cs, EnemyDeath.cs | Optimising scripts, adding extra comments | Finalising and exporting project |
 
 ## Sources
 - [Pathfinding](https://www.youtube.com/watch?v=mP7ulMu5UkU)
+- [Keyboard input](https://docs.unity3d.com/ScriptReference/Input.html)
