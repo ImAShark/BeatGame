@@ -8,7 +8,14 @@ public class SoundTrigger : MonoBehaviour
     
     void Start()
     {
-        component = GetComponentsInChildren<Collider>()[1].gameObject;
+        try
+        {
+            component = GetComponentsInChildren<Collider>()[1].gameObject;
+        }
+        catch
+        {
+            component = GetComponentInChildren<Collider>().gameObject;
+        }        
         component.SetActive(false);
     }
 
