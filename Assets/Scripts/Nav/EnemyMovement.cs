@@ -7,14 +7,12 @@ public class EnemyMovement : MonoBehaviour
 {
     private NavMeshAgent agent;
     private GameObject Player;
-    private Vector3 target;
-   [SerializeField] private bool isAtTarget = true, heardSound;
+   [SerializeField] private bool isAtTarget = true;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         Player = GameObject.Find("Player");
-        Listen();
     }
 
     void Update()
@@ -27,23 +25,20 @@ public class EnemyMovement : MonoBehaviour
         if (agent.pathStatus == NavMeshPathStatus.PathComplete)
         {
             isAtTarget = true;
-            heardSound = false;
-
-        }
-        if (!isAtTarget)
-        {
-            agent.SetDestination(target);
         }        
     }
 
-    public void Listen()
+    public void Listen(GameObject t)
     {
-        if (!heardSound)
-        {
-            target = Player.transform.position;
-            heardSound = true;
             isAtTarget = false;
-            agent.SetDestination(target);
+            agent.SetDestination(t.transform.position);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "AudibleObject")
+        {
+            Listen(other.GetComponentInParent<Collider>().gameObject);
         }
     }
 
