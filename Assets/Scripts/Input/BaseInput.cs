@@ -22,7 +22,6 @@ public class BaseInput : MonoBehaviour
         try {
             // replace 250 with the maximum range of a weapons later.
             AimData data = new AimData(position, 250);
-            Debug.Log("Angle: " + data.GetAngle() + " | Intensity: " + data.GetAimIntensity());
             OnAim(data);
         }
         catch {

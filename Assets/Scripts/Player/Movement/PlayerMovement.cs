@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _movementSpeed = 1;
     [SerializeField] private GameObject playerModel;
+    [SerializeField] private float _modelRotation = 0;
 
     void Start()
     {
@@ -18,35 +17,35 @@ public class PlayerMovement : MonoBehaviour
         float x, z, angle;
         switch (direction) {
             case InputHandler.Directions.North:
-                playerModel.transform.transform.rotation = Quaternion.Euler(0, 45*0, 0);
+                playerModel.transform.transform.rotation = Quaternion.Euler(0, 45*0 + _modelRotation, 0);
                 angle = 90;
                 break;
             case InputHandler.Directions.NorthEast:
-                playerModel.transform.transform.rotation = Quaternion.Euler(0, 45*1, 0);
+                playerModel.transform.transform.rotation = Quaternion.Euler(0, 45*1 + _modelRotation, 0);
                 angle = 45;
                 break;
             case InputHandler.Directions.East:
-                playerModel.transform.transform.rotation = Quaternion.Euler(0, 45*2, 0);
+                playerModel.transform.transform.rotation = Quaternion.Euler(0, 45*2 + _modelRotation, 0);
                 angle = 0;
                 break;
             case InputHandler.Directions.SouthEast:
-                playerModel.transform.transform.rotation = Quaternion.Euler(0, 45*3, 0);
+                playerModel.transform.transform.rotation = Quaternion.Euler(0, 45*3 + _modelRotation, 0);
                 angle = -45;
                 break;
             case InputHandler.Directions.South:
-                playerModel.transform.transform.rotation = Quaternion.Euler(0, 45*4, 0);
+                playerModel.transform.transform.rotation = Quaternion.Euler(0, 45*4 + _modelRotation, 0);
                 angle = -90;
                 break;
             case InputHandler.Directions.SouthWest:
-                playerModel.transform.transform.rotation = Quaternion.Euler(0, 45*5, 0);
+                playerModel.transform.transform.rotation = Quaternion.Euler(0, 45*5 + _modelRotation, 0);
                 angle = -135;
                 break;
             case InputHandler.Directions.West:
-                playerModel.transform.transform.rotation = Quaternion.Euler(0, 45*6, 0);
+                playerModel.transform.transform.rotation = Quaternion.Euler(0, 45*6 + _modelRotation, 0);
                 angle = 180;
                 break;
             case InputHandler.Directions.NorthWest:
-                playerModel.transform.transform.rotation = Quaternion.Euler(0, 45*7, 0);
+                playerModel.transform.transform.rotation = Quaternion.Euler(0, 45*7 + _modelRotation, 0);
                 angle = 135;
                 break;
             default:

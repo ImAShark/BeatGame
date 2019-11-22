@@ -1,18 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.AI;
+﻿using UnityEngine.AI;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    private NavMeshAgent agent;
-    private GameObject Player;
-   [SerializeField] private bool isAtTarget = true;
+    private NavMeshAgent _agent;
+   [SerializeField] private bool _isAtTarget = true;
 
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
-        Player = GameObject.Find("Player");
+        _agent = GetComponent<NavMeshAgent>();
     }
 
     void Update()
@@ -22,16 +18,16 @@ public class EnemyMovement : MonoBehaviour
 
     private void GoToSound()
     {
-        if (agent.pathStatus == NavMeshPathStatus.PathComplete)
+        if (_agent.pathStatus == NavMeshPathStatus.PathComplete)
         {
-            isAtTarget = true;
+            _isAtTarget = true;
         }        
     }
 
     public void Listen(GameObject t)
     {
-            isAtTarget = false;
-            agent.SetDestination(t.transform.position);
+            _isAtTarget = false;
+            _agent.SetDestination(t.transform.position);
     }
 
     private void OnTriggerEnter(Collider other)

@@ -1,21 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SoundDistance : MonoBehaviour
 {
-    private GameObject origin;
-    [SerializeField]private int noiseLevel = 10;
+    private GameObject _origin;
+    [SerializeField]private int _noiseLevel = 10;
 
     void Start()
     {
-        origin = GameObject.Find("Player");
+        _origin = GameObject.Find("Player");
     }
 
     private bool CalculateAudibilaty()
     {
-        float distance = Vector3.Distance(origin.transform.position, transform.position);
-        if (distance - noiseLevel < 0)
+        float distance = Vector3.Distance(_origin.transform.position, transform.position);
+        if (distance - _noiseLevel < 0)
         {
             return true;
         }
