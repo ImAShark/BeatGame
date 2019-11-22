@@ -1,19 +1,13 @@
+
 # Game Prototype
 For this assignment we have created a prototype of a game. In this prototype we have created the core mechanics of the game, so we can add more features to the game later. In this case the core mechanics are as followed.
 - User input
 - Player movement
 - Enemy pathfinding
 
-## Features
-//Wanneer je een specifiek onderdeel wilt uitlichten kun je dat in deze sectie benoemen.
-// We moeten nog beslissen of we deze header erin laten :/
-
-- We still need to do these ones. [Awesome Algoritme](link)
-- [Specifieke Mechanic](link)
-
 ## Software Anaylse
 
-***For this software analyse, we researched both the engines and the languages.***
+***For this software analyse, we researched both the engines and the programming languages.***
 
 ## ***Unity***
 ### ***Advantages***
@@ -51,7 +45,7 @@ We have had numerous issues with branches deleting important files, merge errors
 There are also a few lightning and rendering issues. One of the most common rendering issues is when you have two objects of the exact same color placed within each other.
 The issue with this is that unity doesn't have a strict rendering order, and thus creates epileptic visual glitches on sides of the cube.
 
-- To are too many options.
+- There are too many options.
 >Simply put: There are just to many options.
 For example: When you import a 3d model, there are about 30 different options on how to render the model.
 Most of these options have a dropdown menu with another 4 options.
@@ -117,7 +111,7 @@ After our research on both engines and both languages, we have decided Unity wil
 | | Monday | Tuesday | Wednesday | Thursday | Friday |
 | --- | --- | --- | --- | --- | --- |
 |Week 46 - 2019| Documentation EnemyMovement.cs| EnemyMovement.cs Model sizes | InputHandler.cs KeyboardInput.cs Enemy pathfinding | InputHandler.cs KeyboardInput.cs | PlayerMovement.cs Enemy pathfinding |
-|Week 47 - 2019 | PlayerInput.cs PlayerMovement.cs | PlayerMovement.cs InputHandler.cs Enemy pathfinding | PlayerDeath.cs EnemyDeath.cs | Optimising scripts adding extra comments | Finalising and exporting project |
+|Week 47 - 2019 | PlayerInput.cs PlayerMovement.cs | PlayerMovement.cs InputHandler.cs Enemy pathfinding | Health.cs | Optimising scripts | Finalising and exporting project |
 
 ## Sources
 - [Pathfinding](https://www.youtube.com/watch?v=mP7ulMu5UkU)
